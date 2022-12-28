@@ -23,6 +23,27 @@ export default function Navber() {
       <div className="navbar bg-neutral bg-[#3F4257] text-neutral-content lg:px-20 md:px-4">
         {/* Logo and Search  */}
         <div className="flex-1">
+          {/* ProfileLayout  */}
+          <label
+            htmlFor="dashboard-drawer"
+            tabIndex={2}
+            className="btn btn-ghost lg:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
           <Link to="/" className="normal-case text-xl mr-5">
             <img
               className="w-40"
@@ -30,14 +51,6 @@ export default function Navber() {
               alt=""
             />
           </Link>
-
-          {/* <div className="form-control">
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered"
-            />
-          </div> */}
           <input
             type="text"
             placeholder="Search"
@@ -53,7 +66,6 @@ export default function Navber() {
                 <span className="text-2xl">
                   <BsMessenger />
                 </span>
-
                 <span className="badge badge-sm indicator-item">8</span>
               </div>
             </label>
@@ -76,21 +88,6 @@ export default function Navber() {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator">
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg> */}
-
                 <span className="text-2xl">
                   <IoNotificationsSharp />
                 </span>
