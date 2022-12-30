@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../context/UserContext/UserContext";
 import { BsMessenger } from "react-icons/bs";
-import { IconName } from "react-icons/md";
-import { IoNotificationsOutline, IoNotificationsSharp } from "react-icons/io5";
+import { IoNotificationsSharp } from "react-icons/io5";
 
 export default function Navber() {
   const { user, userSignOut } = useContext(authContext);
@@ -74,13 +73,7 @@ export default function Navber() {
               className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
             >
               <div className="card-body">
-                <span className="font-bold text-lg">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
-                <div className="card-actions">
-                  <button className="btn btn-primary btn-block">
-                    View cart
-                  </button>
-                </div>
+                <span className="text-info">Comming soon</span>
               </div>
             </div>
           </div>
@@ -100,13 +93,7 @@ export default function Navber() {
               className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
             >
               <div className="card-body">
-                <span className="font-bold text-lg">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
-                <div className="card-actions">
-                  <button className="btn btn-primary btn-block">
-                    View cart
-                  </button>
-                </div>
+                <span className="text-info">Comming soon</span>
               </div>
             </div>
           </div>
@@ -114,7 +101,6 @@ export default function Navber() {
           <div className="dropdown dropdown-end">
             {user?.uid ? (
               <>
-                {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar"> */}
                 <div tabIndex={0} className="avatar"></div>
                 <div
                   className="tooltip tooltip-bottom"
@@ -124,10 +110,11 @@ export default function Navber() {
                     tabIndex={0}
                     className="w-10 rounded-full"
                     alt=""
+                    referrerpolicy="no-referrer"
                     src={user?.photoURL}
                   />
+                  {/* <h1>{user?.displayName}</h1> */}
                 </div>
-                {/* </label> */}
               </>
             ) : (
               <>
@@ -144,20 +131,17 @@ export default function Navber() {
                 </>
               </>
             )}
-            {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div tabIndex={0} className="avatar"></div>
-            <div
-              className="tooltip tooltip-bottom"
-              // data-tip={user?.displayName}
-            >
-              <img
-                tabIndex={0}
-                className="w-10 rounded-full"
-                alt=""
-                src={user?.photoURL}
-              />
-            </div>
-            </label> */}
+            {/* <>
+              <div tabIndex={0} className="avatar"></div>
+              <div className="tooltip tooltip-bottom">
+                <img
+                  tabIndex={0}
+                  className="w-10 rounded-full"
+                  alt=""
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj3zizMiOMtIM_Vr1GAAyxCKoQUjP9J19W3JMnbIjyB1xTgMEytEzOyietXhOKwJrplnY&usqp=CAU"
+                />
+              </div>
+            </> */}
             <ul
               tabIndex={0}
               className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-neutral rounded-box w-52 text-neutral-content"

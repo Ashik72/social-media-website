@@ -48,18 +48,18 @@ export default function Login() {
   };
 
   //Github LogIn
-  const handleGithubSignIn = () => {
-    githubSignIn(githubProvider)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        console.error(error);
-        setErrorText(error.message);
-      });
-  };
+  // const handleGithubSignIn = () => {
+  //   githubSignIn(githubProvider)
+  //     .then((result) => {
+  //       const user = result.user;
+  //       console.log(user);
+  //       navigate(from, { replace: true });
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //       setErrorText(error.message);
+  //     });
+  // };
   return (
     <div className="hero min-h-screen bg-slate-800">
       <div className="hero-content flex-row lg:flex-row-reverse">
@@ -101,16 +101,19 @@ export default function Login() {
               >
                 Google
               </button>
-              <button
+              {/* <button
                 onClick={handleGithubSignIn}
                 className="btn btn-outline btn-success"
               >
                 GitHub
-              </button>
+              </button> */}
               <label className="label">
                 <h3 className="label-text-alt ">
                   Don't have an account?
-                  <Link className="link link-hover" to="/register">
+                  <Link
+                    className="link link-hover underline underline-offset-1"
+                    to="/register"
+                  >
                     <span> </span> Register
                   </Link>
                 </h3>

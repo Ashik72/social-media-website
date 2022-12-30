@@ -2,12 +2,13 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { BsMessenger } from "react-icons/bs";
+import Navber from "../components/Navbar/Navber";
 
-export default function ProfileLayout() {
+export default function LeftRightLayout() {
   return (
     <>
       {/* Left sidebar under right sidebar */}
-      <div className="drawer drawer-mobile">
+      <div className="drawer drawer-mobile fixed">
         <input
           id="dashboard-drawer"
           type="checkbox"

@@ -44,7 +44,7 @@ export default function Register() {
       <div className="hero-content flex-row lg:flex-row-reverse">
         <div className="card flex-shrink-0 w-96 max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleRegister} className="card-body">
-            <div className="form-control">
+            {/* <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
@@ -54,18 +54,8 @@ export default function Register() {
                 placeholder="Your Name"
                 className="input input-bordered"
               />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Photo url</span>
-              </label>
-              <input
-                name="photoURL"
-                type="text"
-                placeholder="Phot URL"
-                className="input input-bordered"
-              />
-            </div>
+            </div> */}
+
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -92,6 +82,27 @@ export default function Register() {
                 {errorText}
               </p>
             </div>
+            {/* <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo url</span>
+              </label>
+              <input
+                className="form-control
+                            block
+                            w-full
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                type="file"
+                name="photoURL"
+                id="formFile"
+              />
+            </div> */}
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-primary">
                 Register
@@ -100,7 +111,10 @@ export default function Register() {
             <label className="label">
               <h3 className="label-text-alt ">
                 Already An Have Account?{" "}
-                <Link className="link link-hover" to="/login">
+                <Link
+                  className="link link-hover underline underline-offset-1"
+                  to="/login"
+                >
                   Login
                 </Link>
               </h3>
