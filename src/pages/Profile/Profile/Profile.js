@@ -10,7 +10,7 @@ export default function Profile() {
   const { user } = useContext(authContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userposts/?email=${user?.email}`)
+    fetch(`https://free4mood.vercel.app/userposts/?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUserPosts(data));
   }, [user?.email]);

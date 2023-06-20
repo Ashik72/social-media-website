@@ -5,49 +5,6 @@ import { authContext } from "../../../../context/UserContext/UserContext";
 const AobutEditModal = ({ modelProduct, setModelProduct, about }) => {
   const { name, address, education, email } = about;
 
-  // const { user } = useContext(authContext);
-
-  // const handleBooking = (event) => {
-  //   event.preventDefault();
-  //   const form = event.target;
-  //   const resalePrice = form.resalePrice.value;
-  //   const name = form.name.value;
-  //   const email = form.email.value;
-  //   const phone = form.phone.value;
-  //   const meetingLocation = form.meetingLocation.value;
-
-  //   const booking = {
-  //     productId: _id,
-  //     img,
-  //     title,
-  //     user: name,
-  //     resalePrice,
-  //     email,
-  //     phone,
-  //     meetingLocation,
-  //   };
-
-  //   fetch("https://free4mood.vercel.appbookings", {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(booking),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       if (data.acknowledged) {
-  //         //close the mode
-  //         setModelProduct(null);
-  //         toast.success("Booking Confrimed");
-  //         // refetch();
-  //       } else {
-  //         toast.error(data.message);
-  //       }
-  //     });
-  // };
-
   return (
     <>
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
