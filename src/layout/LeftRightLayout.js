@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { BsMessenger } from "react-icons/bs";
 import Navber from "../components/Navbar/Navber";
+import Footer from "../components/Footer/Footer";
 
 export default function LeftRightLayout() {
   return (

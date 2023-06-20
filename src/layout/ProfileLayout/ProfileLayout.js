@@ -5,7 +5,7 @@ import ProfileBanner from "../../pages/Profile/ProfileBanner/ProfileBanner";
 
 export default function ProfileLayout() {
   return (
-    <div className="p-10 mb-96">
+    <div className="mb-16">
       <ProfileBanner></ProfileBanner>
       <Outlet></Outlet>
     </div>

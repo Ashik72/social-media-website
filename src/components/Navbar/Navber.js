@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { authContext } from "../../context/UserContext/UserContext";
 import { BsMessenger } from "react-icons/bs";
 import { IoNotificationsSharp } from "react-icons/io5";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export default function Navber() {
   const { user, userSignOut } = useContext(authContext);
@@ -65,7 +66,7 @@ export default function Navber() {
                 <span className="text-2xl">
                   <BsMessenger />
                 </span>
-                <span className="badge badge-sm indicator-item">8</span>
+                <span className="badge badge-sm indicator-item">0</span>
               </div>
             </label>
             <div
@@ -85,7 +86,7 @@ export default function Navber() {
                   <IoNotificationsSharp />
                 </span>
 
-                <span className="badge badge-sm indicator-item">8</span>
+                <span className="badge badge-sm indicator-item">0</span>
               </div>
             </label>
             <div
@@ -99,55 +100,35 @@ export default function Navber() {
           </div>
           {/* Profile Photo  */}
           <div className="dropdown dropdown-end">
-            {user?.uid ? (
-              <>
-                <div tabIndex={0} className="avatar"></div>
-                <div
-                  className="tooltip tooltip-bottom"
-                  // data-tip={user?.displayName}
-                >
-                  <img
-                    tabIndex={0}
-                    className="w-10 rounded-full"
-                    alt=""
-                    referrerpolicy="no-referrer"
-                    src={user?.photoURL}
-                  />
-                  {/* <h1>{user?.displayName}</h1> */}
-                </div>
-              </>
-            ) : (
-              <>
-                <>
-                  <div tabIndex={0} className="avatar"></div>
-                  <div className="tooltip tooltip-bottom">
+            <div className="stat-figure text-secondary">
+              <div tabIndex={0} className="avatar"></div>
+
+              <div
+                className="tooltip tooltip-bottom"
+                // data-tip={user?.displayName}
+              >
+                <div className="avatar online">
+                  <div className="w-10 rounded-full">
                     <img
                       tabIndex={0}
                       className="w-10 rounded-full"
                       alt=""
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj3zizMiOMtIM_Vr1GAAyxCKoQUjP9J19W3JMnbIjyB1xTgMEytEzOyietXhOKwJrplnY&usqp=CAU"
+                      referrerpolicy="no-referrer"
+                      src={user?.photoURL}
                     />
+                    <MdOutlineKeyboardArrowDown className="text-white" />
                   </div>
-                </>
-              </>
-            )}
-            {/* <>
-              <div tabIndex={0} className="avatar"></div>
-              <div className="tooltip tooltip-bottom">
-                <img
-                  tabIndex={0}
-                  className="w-10 rounded-full"
-                  alt=""
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj3zizMiOMtIM_Vr1GAAyxCKoQUjP9J19W3JMnbIjyB1xTgMEytEzOyietXhOKwJrplnY&usqp=CAU"
-                />
+                </div>
+                {/* <h1>{user?.displayName}</h1> */}
               </div>
-            </> */}
+            </div>
+
             <ul
               tabIndex={0}
               className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-neutral rounded-box w-52 text-neutral-content"
             >
               <li>
-                <Link to="/profile" className="justify-between ">
+                <Link to="/profile/media" className="justify-between ">
                   Profile
                   {/* <span className="badge">New</span> */}
                 </Link>

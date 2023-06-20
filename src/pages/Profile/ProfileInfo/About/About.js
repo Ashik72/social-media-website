@@ -3,11 +3,14 @@ import { CiCircleMore } from "react-icons/ci";
 import { authContext } from "../../../../context/UserContext/UserContext";
 import AboutAddModal from "./AboutAddModal";
 import AboutInfo from "./AboutInfo";
+import AobutEditModal from "./AboutEditModal";
 
 export default function About() {
   const [about, setAbout] = useState([]);
   const { user } = useContext(authContext);
+  // const [modelProduct, setModelProduct] = useState([]);
 
+  // Get API for about information
   useEffect(() => {
     fetch(`https://free4mood.vercel.app/about/?email=${user?.email}`)
       .then((res) => res.json())
@@ -32,7 +35,7 @@ export default function About() {
             </li>
             <li>
               <label
-                // onClick={() => setModelProduct(product)}
+                // onClick={() => setModelProduct()}
                 htmlFor="booking-modal"
                 className=""
               >
@@ -44,6 +47,7 @@ export default function About() {
       </div>
       <AboutInfo about={about}></AboutInfo>
       <AboutAddModal></AboutAddModal>
+      <AobutEditModal about={about}></AobutEditModal>
     </div>
   );
 }

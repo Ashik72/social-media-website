@@ -1,53 +1,52 @@
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../../contexts/AuthProvider";
+import { authContext } from "../../../../context/UserContext/UserContext";
 
-const AobutEditModal = ({ modelProduct, setModelProduct }) => {
-  const { _id, img, title, resalePrice } = modelProduct;
-  console.log(modelProduct);
+const AobutEditModal = ({ modelProduct, setModelProduct, about }) => {
+  const { name, address, education, email } = about;
 
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(authContext);
 
-  const handleBooking = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const resalePrice = form.resalePrice.value;
-    const name = form.name.value;
-    const email = form.email.value;
-    const phone = form.phone.value;
-    const meetingLocation = form.meetingLocation.value;
+  // const handleBooking = (event) => {
+  //   event.preventDefault();
+  //   const form = event.target;
+  //   const resalePrice = form.resalePrice.value;
+  //   const name = form.name.value;
+  //   const email = form.email.value;
+  //   const phone = form.phone.value;
+  //   const meetingLocation = form.meetingLocation.value;
 
-    const booking = {
-      productId: _id,
-      img,
-      title,
-      user: name,
-      resalePrice,
-      email,
-      phone,
-      meetingLocation,
-    };
+  //   const booking = {
+  //     productId: _id,
+  //     img,
+  //     title,
+  //     user: name,
+  //     resalePrice,
+  //     email,
+  //     phone,
+  //     meetingLocation,
+  //   };
 
-    fetch("https://free4mood.vercel.appbookings", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(booking),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.acknowledged) {
-          //close the mode
-          setModelProduct(null);
-          toast.success("Booking Confrimed");
-          // refetch();
-        } else {
-          toast.error(data.message);
-        }
-      });
-  };
+  //   fetch("https://free4mood.vercel.appbookings", {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(booking),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.acknowledged) {
+  //         //close the mode
+  //         setModelProduct(null);
+  //         toast.success("Booking Confrimed");
+  //         // refetch();
+  //       } else {
+  //         toast.error(data.message);
+  //       }
+  //     });
+  // };
 
   return (
     <>
@@ -60,48 +59,54 @@ const AobutEditModal = ({ modelProduct, setModelProduct }) => {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">{title}</h3>
+          <h3 className="text-lg font-bold">
+            {/* {title} */}Edit Your About Information
+          </h3>
 
           <form
-            onSubmit={handleBooking}
+            // onSubmit={handleBooking}
             className="grid grid-cols-1 gap-3 mt-6"
           >
-            <input
-              name="resalePrice"
-              type="text"
-              disabled
-              value={resalePrice}
-              className="input w-full input-bordered "
-            />
+            <div>
+              <h3 className="text-sm font-sm">Name</h3>
+              <input
+                name="resalePrice"
+                type="text"
+                // disabled
+                value={name}
+                className="input w-full input-bordered "
+              />
+            </div>
 
-            <input
-              name="name"
-              type="text"
-              defaultValue={user?.displayName}
-              disabled
-              placeholder="Your Name"
-              className="input w-full input-bordered"
-            />
-            <input
-              name="email"
-              type="email"
-              defaultValue={user?.email}
-              disabled
-              placeholder="Email Address"
-              className="input w-full input-bordered"
-            />
-            <input
-              name="phone"
-              type="text"
-              placeholder="Phone Number"
-              className="input w-full input-bordered"
-            />
-            <input
-              name="meetingLocation"
-              type="text"
-              placeholder="Meeting Location"
-              className="input w-full input-bordered"
-            />
+            <div>
+              <h3 className="text-sm font-sm">Address</h3>
+              <input
+                name="name"
+                type="text"
+                value={address}
+                className="input w-full input-bordered"
+              />
+            </div>
+            <div>
+              <h3 className="text-sm font-sm">Education</h3>
+              <input
+                name="email"
+                type="text"
+                value={education}
+                placeholder="Email Address"
+                className="input w-full input-bordered"
+              />
+            </div>
+            <div>
+              <h3 className="text-sm font-sm">Anther Email</h3>
+              <input
+                name="phone"
+                type="text"
+                value={email}
+                className="input w-full input-bordered"
+              />
+            </div>
+
             <br />
             <input
               className="btn btn-accent w-full"

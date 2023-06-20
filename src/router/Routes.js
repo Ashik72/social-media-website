@@ -34,13 +34,13 @@ const router = createBrowserRouter([
         element: <ProfileLayout></ProfileLayout>,
         children: [
           {
-            path: "/profile",
+            path: "/profile/media",
             element: <Profile></Profile>,
           },
-          {
-            path: "/profile/media",
-            element: <Media></Media>,
-          },
+          // {
+          //   path: "/profile/media",
+          //   element: <Profile></Pofile>,
+          // },
           {
             path: "/profile/friends",
             element: <Friends></Friends>,
